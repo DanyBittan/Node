@@ -1,2 +1,4 @@
 #!/bin/bash -xe
-npm start
+
+cd /home/ubuntu/app
+npm start --force

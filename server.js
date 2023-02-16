@@ -1,16 +1,14 @@
-const { hostname } = require('os');
-const http = require('http');
-
-const message = "Hola Mundo";
+const http = require("http");
+const {hostname} = require("http");
 const port = 8080;
 
-const server = http.createServer((req,res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type',"text/plain");
-    res.end(message);
-});
+const requestListener = function (req, res) {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', "text/plain");
+  res.end(`Hola Mundo`);
+};
 
+const server = http.createServer(requestListener);
 server.listen(port, hostname, () => {
-    console.log(`Servidor corriendo en http://${hostname()}:${port}/`);
+    console.log(`Server is running on http://${hostname}:${port}`);
 });
-
