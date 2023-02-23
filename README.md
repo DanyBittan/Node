@@ -1,5 +1,5 @@
 # Aplicación HolaMundo en Node.js
-## Instalación Node en ubuntu
+## Pasos manuales de instalación de node para replicarlos en el servidor.
 
 Iniciamos instalando nvm
 
