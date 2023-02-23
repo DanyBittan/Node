@@ -18,3 +18,9 @@ Comprobamos si se instalo comprobando la versión:
 nvm -v
 ```
 
+Instalare la última versión con:
+
+```
+nvm install --lts
+```
+
