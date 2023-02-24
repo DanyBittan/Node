@@ -1,11 +1,11 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: deployworkflow
+name: deploy
 
 on:
   workflow_run:
-    workflows: ["testworkflow"]
+    workflows: ["test"]
     types:
       - completed
  
@@ -24,7 +24,7 @@ jobs:
     - name: Deploy to EC2
       run: |
         aws deploy create-deployment \
-          --application-name application_node \
-          --deployment-group deployment-group \
+          --application-name awsbootstrap-CodeDeployApp-JO7kXgGCYALs \
+          --deployment-group DeployGroup \
           --github-location repository=${{github.repository}},commitId=${{github.sha}}
 
